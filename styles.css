@@ -1,0 +1,291 @@
+/* Define a modern, nature-inspired color palette and typography */
+:root {
+    --background: #F8F7F4;
+    --text-primary: #1a2e05;
+    --text-secondary: #5a6e50;
+    --primary: #4A7729;
+    --primary-hover: #3A5F20;
+    --secondary: #A3B59d;
+    --accent: #D48C45;
+}
+
+body {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    background-color: var(--background);
+    color: var(--text-primary);
+}
+
+/* Custom component styles using Standard CSS */
+.btn-primary {
+    display: inline-block;
+    background-color: var(--primary);
+    color: white;
+    font-weight: 700;
+    padding: 0.75rem 2rem;
+    border-radius: 9999px;
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+    transition: all 0.3s ease-in-out;
+    transform: translateY(0);
+    position: relative;
+    overflow: hidden;
+}
+
+.btn-primary::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    transition: 0.5s;
+}
+
+.btn-primary:hover::before {
+    left: 100%;
+}
+
+.btn-primary:hover {
+    background-color: var(--primary-hover);
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+    transform: translateY(-0.25rem);
+}
+
+.btn-secondary {
+    display: inline-block;
+    background-color: var(--secondary);
+    color: white;
+    font-weight: 600;
+    padding: 0.6rem 1.5rem;
+    border-radius: 9999px;
+    transition: all 0.3s ease-in-out;
+}
+
+.btn-secondary:hover {
+    background-color: var(--primary);
+    transform: translateY(-2px);
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.animate-fade-in {
+    animation: fadeIn 0.8s ease-out forwards;
+}
+
+@keyframes slideInUp {
+    from {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.modal.is-open .modal-content {
+    animation: slideInUp 0.5s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+/* Live notification pop-up */
+#live-notification {
+    transform: translateX(-120%);
+    transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+#live-notification.show {
+    transform: translateX(0);
+}
+
+/* Custom scrollbar for modals */
+.modal-scrollable::-webkit-scrollbar {
+    width: 6px;
+}
+
+.modal-scrollable::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+.modal-scrollable::-webkit-scrollbar-thumb {
+    background: var(--secondary);
+    border-radius: 6px;
+}
+
+.modal-scrollable::-webkit-scrollbar-thumb:hover {
+    background: var(--primary);
+}
+
+/* Improved product card */
+.product-card {
+    transition: all 0.3s ease;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.05);
+    position: relative;
+}
+
+.product-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom, transparent 0%, rgba(0, 0, 0, 0.01) 100%);
+    z-index: 1;
+    pointer-events: none;
+}
+
+.product-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+}
+
+/* Hero section enhancement */
+.hero-pattern {
+    background-color: #f8f7f4;
+    opacity: 0.8;
+    background-image: radial-gradient(#4A7729 0.8px, #f8f7f4 0.8px);
+    background-size: 16px 16px;
+}
+
+/* Section spacing improvement */
+section {
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+}
+
+/* Modal close button improvement */
+.modal-close-btn {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    width: 2.5rem;
+    height: 2.5rem;
+    border-radius: 50%;
+    background: rgba(0, 0, 0, 0.05);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    z-index: 10;
+}
+
+.modal-close-btn:hover {
+    background: rgba(0, 0, 0, 0.1);
+    transform: rotate(90deg);
+}
+
+/* Discount badge - removed as requested */
+.discount-badge {
+    display: none;
+}
+
+/* Category filter buttons */
+.filter-btn {
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.filter-btn::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background: var(--primary);
+    transform: scaleX(0);
+    transition: transform 0.3s ease;
+}
+
+.filter-btn.active::after {
+    transform: scaleX(1);
+}
+
+/* Improved button text contrast */
+.btn-primary,
+.btn-secondary,
+.view-detail-btn,
+.filter-btn.active,
+#modal-checkout-btn,
+#back-to-products-btn {
+    color: white !important;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+/* Enhanced modal scrolling */
+.modal-scrollable {
+    overflow-y: auto;
+    max-height: calc(100vh - 4rem);
+}
+
+/* Product detail modal improvements */
+#product-detail-modal .modal-content {
+    max-height: 90vh;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
+
+#product-detail-modal .modal-scrollable {
+    flex: 1;
+    padding: 1.5rem;
+}
+
+/* Toast notification for empty cart */
+.cart-toast {
+    position: fixed;
+    bottom: 100px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--primary);
+    color: white;
+    padding: 12px 20px;
+    border-radius: 8px;
+    font-weight: 500;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+/* Terms section styling */
+#terms-section .prose h3 {
+    margin-top: 2rem;
+    margin-bottom: 0.5rem;
+}
+
+#terms-section .prose p {
+    margin-bottom: 1rem;
+}
+
+/* Social media icons */
+footer .fa-facebook:hover {
+    color: #3b5998;
+}
+
+footer .fa-tiktok:hover {
+    color: #000000;
+}
+
+footer .fa-instagram:hover {
+    color: #E1306C;
+}
+
+footer .fa-whatsapp:hover {
+    color: #25D366;
+}

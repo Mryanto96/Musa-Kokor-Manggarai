@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Musa Kokor - Solusi Herbal Alami dari Manggarai</title>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet" />
+    
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body class="antialiased">
+    <!-- Live Notification -->
+    <div id="live-notification"
+        class="fixed bottom-6 left-6 z-[102] flex items-center gap-4 w-80 bg-white/90 backdrop-blur-lg rounded-xl shadow-2xl p-4 border border-gray-100">
+        <div id="buyer-avatar"
+            class="flex-shrink-0 w-12 h-12 rounded-full flex items-center justify-center text-white font-bold text-lg shadow-md">
+        </div>
+        <div>
+            <p class="font-bold text-sm text-primary">Pembelian Baru!</p>
+            <p id="notification-text" class="text-xs text-text-secondary mt-0.5"></p>
+            <p id="notification-time" class="text-xs text-gray-400 mt-1"></p>
+        </div>
+    </div>
+
+    <!-- Visitor Counter -->
+    <div
+        class="fixed bottom-6 right-6 z-[102] bg-white/90 backdrop-blur-lg py-2 px-4 rounded-full shadow-lg flex items-center gap-2 text-text-secondary text-sm border border-gray-100">
+        <span class="relative flex h-3 w-3">
+            <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
+            <span class="relative inline-flex rounded-full h-3 w-3 bg-green-500"></span>
+        </span>
+        <span class="font-medium">Online: <span id="visitor-count" class="font-bold text-text-primary">500</span>+</span>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="sticky top-0 z-50 bg-white/95 backdrop-blur-md shadow-sm border-b border-gray-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center py-4">
+                <a href="#" class="text-2xl font-extrabold tracking-tight flex items-center">
+                    <span style="color: var(--primary)">Musa</span><span style="color: var(--accent)">Kokor.</span>
+                </a>
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="#hero-section"
+                        class="text-text-secondary hover:text-primary transition-colors font-medium relative group">
+                        Beranda
+                        <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-primary transition-all group-hover:w-full"></span>
+                    </a>
+                    <a href="#products-section"
+                        class="text-text-secondary hover:text-primary transition-colors font-medium relative group">
+                        Produk
+                        <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-primary transition-all group-hover:w-full"></span>
+                    </a>
+                    <a href="#about-section"
+                        class="text-text-secondary hover:text-primary transition-colors font-medium relative group">
+                        Tentang Kami
+                        <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-primary transition-all group-hover:w-full"></span>
+                    </a>
+                    <a href="#terms-section"
+                        class="text-text-secondary hover:text-primary transition-colors font-medium relative group">
+                        Syarat & Ketentuan
+                        <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-primary transition-all group-hover:w-full"></span>
+                    </a>
+                </div>
+                <div class="flex items-center gap-4">
+                    <div class="relative hidden sm:block">
+                        <i class="fas fa-search absolute left-4 top-1/2 -translate-y-1/2 text-gray-400"></i>
+                        <input type="text" id="search-input" placeholder="Cari produk..."
+                            class="w-48 pl-11 pr-4 py-2 text-sm bg-gray-100 rounded-full border-transparent focus:ring-2 focus:ring-primary focus:border-transparent transition" />
+                    </div>
+                    <button id="cart-btn-nav"
+                        class="relative p-2 text-text-secondary hover:text-primary transition-colors">
+                        <i class="fas fa-shopping-bag text-2xl"></i>
+                        <span id="cart-count-nav"
+                            class="text-xs font-semibold bg-accent text-white rounded-full h-5 w-5 flex items-center justify-center absolute top-0 -right-1">0</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <main>
+        <!-- Hero Section -->
+        <header id="hero-section" class="relative overflow-hidden hero-pattern">
+            <div class="absolute inset-0 bg-gradient-to-r from-white/70 to-transparent"></div>
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 md:py-32 relative z-10">
+                <div class="grid md:grid-cols-2 gap-12 items-center">
+                    <div class="text-center md:text-left animate-fade-in">
+                        <h1 class="text-4xl md:text-6xl font-extrabold tracking-tighter leading-tight">
+                            <span style="color: var(--accent)">Solusi Herbal Alami</span>
+                            <span class="block mt-2" style="color: var(--primary)">Langsung dari Alam Manggarai.</span>
+                        </h1>
+                        <p class="mt-6 text-lg text-text-secondary max-w-xl mx-auto md:mx-0">
+                            Temukan khasiat warisan leluhur dalam setiap produk kami. Dibuat
+                            dengan cinta dan bahan-bahan alami terbaik untuk kesehatan
+                            keluarga Anda.
+                        </p>
+                        <div class="mt-10 flex flex-col sm:flex-row gap-4">
+                            <a href="#products-section" class="btn-primary inline-flex items-center justify-center">
+                                Jelajahi Produk Kami
+                                <i class="fas fa-arrow-right ml-2 text-sm"></i>
+                            </a>
+                            <a href="#about-section" class="btn-secondary inline-flex items-center justify-center">
+                                Tentang Kami
+                                <i class="fas fa-info-circle ml-2 text-sm"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="relative">
+                        <div class="absolute -inset-4 bg-gradient-to-r from-primary/10 to-accent/10 rounded-3xl transform rotate-3"></div>
+                        <img src="images/img5.jpg"
+                            alt="Natural herbal products" class="relative rounded-3xl shadow-2xl w-full h-full object-cover" />
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <!-- Products Section -->
+        <section id="products-section" class="py-20 bg-white">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-16 animate-fade-in">
+                    <h2 class="text-3xl md:text-4xl font-extrabold tracking-tight">
+                        Produk Unggulan Kami
+                    </h2>
+                    <p class="mt-4 text-lg text-text-secondary max-w-2xl mx-auto">
+                        Pilih kategori produk yang sesuai dengan kebutuhan Anda.
+                    </p>
+                </div>
+
+                <div class="flex flex-wrap justify-center items-center gap-3 mb-12 animate-fade-in">
+                    <button data-filter="all"
+                        class="filter-btn active bg-primary text-white px-5 py-2.5 rounded-full text-sm font-semibold transition-all shadow">
+                        Semua
+                    </button>
+                    <button data-filter="Obat Cair"
+                        class="filter-btn bg-gray-100 text-text-secondary px-5 py-2.5 rounded-full text-sm font-semibold transition-all hover:bg-primary hover:text-white">
+                        Obat Cair
+                    </button>
+                    <button data-filter="Obat Kapsul"
+                        class="filter-btn bg-gray-100 text-text-secondary px-5 py-2.5 rounded-full text-sm font-semibold transition-all hover:bg-primary hover:text-white">
+                        Obat Kapsul
+                    </button>
+                    <button data-filter="Obat Kulit"
+                        class="filter-btn bg-gray-100 text-text-secondary px-5 py-2.5 rounded-full text-sm font-semibold transition-all hover:bg-primary hover:text-white">
+                        Obat Kulit
+                    </button>
+                </div>
+
+                <div id="product-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8"></div>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="about-section" class="py-20 bg-gray-50">
+            <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 grid md:grid-cols-2 gap-12 items-center">
+                <div class="animate-fade-in relative">
+                    <div class="absolute -inset-4 bg-gradient-to-b from-primary/10 to-accent/10 rounded-2xl transform -rotate-3"></div>
+                    <img src="images/img8.jpg"
+                        alt="Founder Musa Kokor" class="relative rounded-2xl shadow-xl w-full h-full object-cover" />
+                </div>
+                <div class="animate-fade-in" style="animation-delay: 200ms">
+                    <h2 class="text-3xl md:text-4xl font-extrabold tracking-tight">
+                        Warisan Kesehatan dari Jantung Flores
+                    </h2>
+                    <p class="mt-4 text-text-secondary leading-relaxed">
+                        Musa Kokor lahir dari kekayaan alam Manggarai, Flores. Setiap
+                        ramuan kami adalah hasil dari pengetahuan turun-temurun yang
+                        dipadukan dengan standar modern, memastikan Anda mendapatkan
+                        produk herbal yang tidak hanya berkhasiat, tetapi juga aman dan
+                        terpercaya.
+                    </p>
+                    <p class="mt-4 text-text-secondary leading-relaxed">
+                        Kami berkomitmen untuk memberdayakan petani lokal dan menjaga
+                        kelestarian alam. Dengan memilih Musa Kokor, Anda tidak hanya
+                        berinvestasi pada kesehatan Anda, tetapi juga mendukung komunitas
+                        dan lingkungan.
+                    </p>
+                    <div class="mt-6 flex items-center gap-2 text-sm text-text-secondary">
+                        <div class="w-10 h-0.5 bg-primary"></div>
+                        <span>Terbuat dari 100% bahan alami</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Terms & Conditions Section -->
+        <section id="terms-section" class="py-20 bg-white">
+            <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-16 animate-fade-in">
+                    <h2 class="text-3xl md:text-4xl font-extrabold tracking-tight">
+                        Syarat & Ketentuan
+                    </h2>
+                    <p class="mt-4 text-lg text-text-secondary max-w-2xl mx-auto">
+                        Ketentuan penggunaan website dan pembelian produk Musa Kokor.
+                    </p>
+                </div>
+
+                <div class="prose prose-lg max-w-none text-text-secondary">
+                    <h3 class="text-primary">1. Penggunaan Website</h3>
+                    <p>Dengan mengakses dan menggunakan website Musa Kokor, Anda setuju untuk mematuhi syarat dan ketentuan yang ditetapkan. Kami berhak mengubah syarat dan ketentuan ini tanpa pemberitahuan sebelumnya.</p>
+
+                    <h3 class="text-primary mt-8">2. Pembelian Produk</h3>
+                    <p>Semua pesanan yang dilakukan melalui website ini tunduk pada ketersediaan produk dan konfirmasi harga. Kami berhak menolak atau membatalkan pesanan kapan saja karena alasan tertentu termasuk keterbatasan ketersediaan produk, kesalahan dalam deskripsi atau harga produk, atau kesalahan dalam pesanan yang Anda buat.</p>
+
+                    <h3 class="text-primary mt-8">3. Harga dan Pembayaran</h3>
+                    <p>Semua harga yang tercantum adalah dalam Rupiah (IDR) dan termasuk PPN jika berlaku. Harga dapat berubah tanpa pemberitahuan sebelumnya. Pembayaran dilakukan melalui transfer bank atau metode pembayaran lain yang tersedia.</p>
+
+                    <h3 class="text-primary mt-8">4. Pengiriman</h3>
+                    <p>Kami akan berusaha mengirimkan produk dalam waktu 1-3 hari kerja setelah pembayaran dikonfirmasi. Waktu pengiriman dapat bervariasi tergantung lokasi tujuan dan kondisi logistik.</p>
+
+                    <h3 class="text-primary mt-8">5. Kebijakan Pengembalian</h3>
+                    <p>Produk herbal yang telah dibeli tidak dapat dikembalikan atau ditukar kecuali terdapat kerusakan selama pengiriman atau kesalahan pengiriman produk. Klaim harus diajukan dalam waktu 24 jam setelah produk diterima.</p>
+
+                    <h3 class="text-primary mt-8">6. Hak Kekayaan Intelektual</h3>
+                    <p>Seluruh konten yang terdapat di website ini, termasuk teks, grafik, logo, dan gambar, adalah milik Musa Kokor dan dilindungi oleh undang-undang hak cipta.</p>
+
+                    <h3 class="text-primary mt-8">7. Kontak</h3>
+                    <p>Untuk pertanyaan lebih lanjut mengenai syarat dan ketentuan ini, silakan hubungi kami melalui WhatsApp di +62 812-3456-7890 atau email di info@musakokor.com.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="py-12 bg-gray-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-2 gap-8 items-center">
+                <div>
+                    <p class="text-text-secondary">
+                        &copy; 2025 <span class="font-bold text-primary">Musa</span><span
+                            class="font-bold text-accent">Kokor</span>. Semua Hak Cipta
+                        Dilindungi.
+                    </p>
+                </div>
+                <div class="flex justify-center md:justify-end space-x-6">
+                    <a href="https://facebook.com/musakokor" target="_blank" class="text-text-secondary hover:text-primary transition-colors">
+                        <i class="fab fa-facebook text-2xl"></i>
+                    </a>
+                    <a href="https://tiktok.com/@musakokor" target="_blank" class="text-text-secondary hover:text-primary transition-colors">
+                        <i class="fab fa-tiktok text-2xl"></i>
+                    </a>
+                    <a href="https://instagram.com/musakokor" target="_blank" class="text-text-secondary hover:text-primary transition-colors">
+                        <i class="fab fa-instagram text-2xl"></i>
+                    </a>
+                    <a href="https://wa.me/6281234567890" target="_blank" class="text-text-secondary hover:text-primary transition-colors">
+                        <i class="fab fa-whatsapp text-2xl"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Product Detail Modal -->
+    <div id="product-detail-modal"
+        class="modal fixed inset-0 z-[101] hidden items-center justify-center p-4 bg-black/50 backdrop-blur-sm">
+        <div class="modal-content bg-white rounded-xl shadow-2xl max-w-4xl w-full max-h-[90vh] overflow-hidden relative transform">
+            <button class="modal-close-btn close-detail-modal-btn">
+                <i class="fas fa-times text-lg"></i>
+            </button>
+            <div class="overflow-y-auto modal-scrollable h-full p-6">
+                <!-- Content will be inserted here by JavaScript -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Checkout Modal -->
+    <div id="checkout-modal"
+        class="modal fixed inset-0 z-[101] hidden items-center justify-center p-4 bg-black/50 backdrop-blur-sm">
+        <div class="modal-content bg-white rounded-xl shadow-2xl max-w-lg w-full p-6 relative">
+            <button class="modal-close-btn" id="close-modal-btn">
+                <i class="fas fa-times text-lg"></i>
+            </button>
+            <div class="flex justify-between items-center mb-6">
+                <h3 class="text-2xl font-bold">Keranjang Belanja Anda</h3>
+            </div>
+            <div id="modal-products" class="max-h-80 overflow-y-auto modal-scrollable pr-2 mb-4"></div>
+            <div class="border-t pt-4">
+                <div class="flex justify-between items-center font-bold text-lg mb-6">
+                    <span>Total Harga:</span>
+                    <span id="modal-total-price" class="text-primary">Rp 0</span>
+                </div>
+                <button id="modal-checkout-btn" class="w-full btn-primary text-base">
+                    <i class="fab fa-whatsapp mr-2"></i>Lanjutkan ke WhatsApp
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- No Products Found Modal -->
+    <div id="no-products-modal"
+        class="modal fixed inset-0 z-[101] hidden items-center justify-center p-4 bg-black/50 backdrop-blur-sm">
+        <div class="modal-content bg-white rounded-xl shadow-2xl max-w-md w-full p-6 relative text-center">
+            <button class="modal-close-btn close-no-products-modal-btn">
+                <i class="fas fa-times text-lg"></i>
+            </button>
+            <div class="mb-6">
+                <i class="fas fa-search text-5xl text-text-secondary mb-4"></i>
+                <h3 class="text-2xl font-bold mb-2">Produk Tidak Ditemukan</h3>
+                <p class="text-text-secondary">Maaf, tidak ada produk yang sesuai dengan pencarian Anda.</p>
+            </div>
+            <button id="back-to-products-btn" class="w-full btn-primary text-base">
+                Kembali ke Semua Produk
+            </button>
+        </div>
+    </div>
+
+    <!-- Product Card Template -->
+    <template id="product-card-template">
+        <div
+            class="product-card bg-white rounded-2xl overflow-hidden shadow-lg transform transition-all duration-300 hover:shadow-2xl hover:-translate-y-2 flex flex-col h-full">
+            <div class="relative">
+                <img class="product-image w-full h-52 object-cover" src="" alt="" />
+            </div>
+            <div class="p-5 flex flex-col flex-grow">
+                <h3 class="product-name text-lg font-bold mb-2">Product Name</h3>
+                <p class="product-description text-sm text-text-secondary mb-4 flex-grow">
+                    Description
+                </p>
+                <div class="mt-auto">
+                    <div class="flex items-baseline justify-end gap-2 mb-4">
+                        <span class="product-original-price text-sm text-gray-400 line-through"></span>
+                        <span class="product-discounted-price text-xl font-bold text-primary"></span>
+                    </div>
+                    <button
+                        class="view-detail-btn w-full bg-secondary text-white font-semibold py-2.5 rounded-lg transition-colors hover:bg-primary flex items-center justify-center gap-2">
+                        <i class="fas fa-eye"></i>
+                        Lihat Detail
+                    </button>
+                </div>
+            </div>
+        </div>
+    </template>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
