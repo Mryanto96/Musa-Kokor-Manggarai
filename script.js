@@ -7,7 +7,7 @@ document.addEventListener("DOMContentLoaded", () => {
             price: 65000,
             discountedPrice: 50000,
             category: "Obat Cair",
-            image: "images/img1.jpg",
+            image: "img1.jpg",
             description: "Mengatasi sariawan dan panas dalam secara alami dan cepat.",
             details: {
                 komposisi: "Ekstrak daun sirih, air kelapa muda, madu murni.",
@@ -21,7 +21,7 @@ document.addEventListener("DOMContentLoaded", () => {
             price: 50000,
             discountedPrice: 35000,
             category: "Obat Kapsul",
-           image: "images/img2.jpg",
+           image: "img2.jpg",
             description: "Meredakan gejala flu, batuk, dan melegakan pernapasan.",
             details: {
                 komposisi: "Ekstrak jahe, kunyit, daun mint, sambiloto.",
@@ -35,7 +35,7 @@ document.addEventListener("DOMContentLoaded", () => {
             price: 12500,
             discountedPrice: 110000,
             category: "Obat Kapsul",
-            image: "images/img3.jpg",
+            image: "img3.jpg",
             description: "Solusi alami untuk masalah asam lambung dan perut kembung.",
             details: {
                 komposisi: "Ekstrak temulawak, kunyit, dan lidah buaya.",
@@ -49,7 +49,7 @@ document.addEventListener("DOMContentLoaded", () => {
             price: 85000,
             discountedPrice: 60000,
             category: "Obat Kulit",
-            image: "images/img4.jpg",
+            image: "img4.jpg",
             description: "Salep herbal untuk meredakan gatal-gatal, ruam, dan iritasi kulit.",
             details: {
                 komposisi: "Ekstrak daun beluntas, minyak kelapa murni.",
@@ -63,7 +63,7 @@ document.addEventListener("DOMContentLoaded", () => {
             price: 55000,
             discountedPrice: 50000,
             category: "Obat Cair",
-           image: "images/img7.jpg",
+           image: "img7.jpg",
             description: "Minyak oles untuk meredakan pegal linu dan nyeri otot.",
             details: {
                 komposisi: "Ekstrak jahe merah, cengkeh, sereh, dan minyak esensial.",
@@ -77,7 +77,7 @@ document.addEventListener("DOMContentLoaded", () => {
             price: 40000,
             discountedPrice: 35000,
             category: "Obat Kapsul",
-            image: "img/6.jpg",
+            image: "img6.jpg",
             description: "Mengobati sakit kepala dan migrain ringan tanpa efek samping.",
             details: {
                 komposisi: "Ekstrak daun kemangi dan akar valerian.",
@@ -91,7 +91,7 @@ document.addEventListener("DOMContentLoaded", () => {
             price: 60000,
             discountedPrice: 55000,
             category: "Obat Kapsul",
-            image: "img/7.jpg",
+            image: "img7.jpg",
             description: "Membantu meredakan nyeri dan kram perut saat menstruasi.",
             details: {
                 komposisi: "Ekstrak kunyit, asam jawa, dan herbal kewanitaan.",
@@ -105,7 +105,7 @@ document.addEventListener("DOMContentLoaded", () => {
             price: 35000,
             discountedPrice: 32000,
             category: "Obat Cair",
-            image: "img/8.jpg",
+            image: "img8.jpg",
             description: "Menghangatkan tubuh, mengatasi masuk angin, dan melegakan hidung.",
             details: {
                 komposisi: "Minyak kayu putih, peppermint, dan cengkeh.",
@@ -524,4 +524,5 @@ document.addEventListener("DOMContentLoaded", () => {
     
     // Start notification cycle
     startNotificationCycle();
+
 });
